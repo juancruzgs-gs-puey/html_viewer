@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Visor HTML</title>
+  <meta name="description" content="Abre y mira archivos HTML en tu iPhone o iPad, gratis y sin conexión.">
+  <meta name="theme-color" content="#1f6feb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Visor HTML">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="home">
+    <header class="top">
+      <h1>Visor HTML</h1>
+      <p class="sub">Tus archivos se abren en este dispositivo. No se suben a internet.</p>
+    </header>
+
+    <label class="open-btn">
+      <input id="picker" type="file" multiple hidden>
+      <span>Abrir archivo HTML</span>
+    </label>
+    <p class="hint">
+      ¿El HTML usa imágenes o estilos aparte? Selecciónalos junto con el HTML y se verán también.
+    </p>
+
+    <section>
+      <div class="list-head">
+        <h2>Recientes</h2>
+        <span id="count" class="muted"></span>
+      </div>
+      <ul id="recents"></ul>
+      <p id="empty" class="muted empty">Todavía no abriste ningún archivo.</p>
+    </section>
+
+    <details class="help">
+      <summary>¿Cómo abro un HTML que me mandaron por WhatsApp?</summary>
+      <ol>
+        <li>En WhatsApp, toca el archivo y luego el botón Compartir.</li>
+        <li>Elige <b>Guardar en Archivos</b>.</li>
+        <li>Vuelve aquí, toca <b>Abrir archivo HTML</b> y elige ese archivo.</li>
+      </ol>
+    </details>
+
+    <p id="status" class="muted small"></p>
+  </main>
+
+  <div id="viewer" hidden>
+    <iframe id="frame" title="Archivo HTML"
+            sandbox="allow-scripts allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <button id="back" class="back" aria-label="Volver">‹ Volver</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
